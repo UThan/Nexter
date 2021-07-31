@@ -3,6 +3,7 @@ $color-primary: #c69963;
 $color-primary-dark: #B28451;
 
 $color-secondary: #101d2c;
+$color-secondary-dark: #0E1925;
 
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
@@ -57,11 +58,3 @@ body{
     grid-column: col-st 7 / full-end;
 }
 
-.footer{
-    background-color: $color-grey-dark-2;
-    grid-column: full-st/full-end;
-}
-
-.container{
-
-}

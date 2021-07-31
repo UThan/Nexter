@@ -45,11 +45,6 @@ body {
   grid-column: col-st 7 / full-end;
 }
 
-.footer {
-  background-color: #6D5D4B;
-  grid-column: full-st/full-end;
-}
-
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
@@ -434,5 +429,48 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
+}
+
+.footer {
+  background-color: #101d2c;
+  grid-column: full-st/full-end;
+  font-size: 1.4rem;
+}
+
+.nav {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  padding: 6rem;
+  -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav__link:link, .nav__link:visited {
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  padding: 1.5rem;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.nav__link:hover, .nav__link:active {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.copyright {
+  text-align: center;
+  background-color: #0E1925;
+  color: #fff;
 }
 /*# sourceMappingURL=main.css.map */
