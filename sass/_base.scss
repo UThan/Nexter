@@ -10,6 +10,9 @@ $color-grey-light-2: #aaa;
 $color-grey-dark-1: #54483A;
 $color-grey-dark-2: #6D5D4B;
 
+$color-white: #fff;
+$color-black: #000;
+
 // FONT VARIABLES
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
@@ -37,10 +40,6 @@ body{
     display: grid;
     grid-template-columns: [sidebar-st] 8rem [sidebar-end full-st] minmax(6rem,1fr) [center-st] repeat(8,[col-st] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem,1fr) [full-end];
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-    
-
-    & > *{
-    }
 }
 
 .sidebar{
@@ -56,18 +55,6 @@ body{
 .realtors{
     background-color: $color-primary-dark;
     grid-column: col-st 7 / full-end;
-}
-
-.story{
-    &__picture{
-        background-color: $color-grey-dark-1;
-        grid-column: full-st/col-end 4;
-    }
-
-    &__content{
-        background-color: $color-secondary;
-        grid-column: col-st 5/full-end;
-    }
 }
 
 .homes{

@@ -1,0 +1,35 @@
+.story{    
+    &__picture{
+        grid-column: full-st/col-end 4;
+        display: grid;
+        grid-template-columns: repeat(6 , 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        align-items: center;
+        background-image: linear-gradient(rgba($color-primary,0.5),rgba($color-primary,0.5)),url(../img/back.jpg);
+        background-size: cover;
+    }
+
+    &__img-1{
+        width: 100%;
+        grid-area: 2 / 2 / 6 / 6;        
+    }
+
+    &__img-2{
+        width: 115%;
+        grid-area: 4/4/7/7;
+    }
+
+    &__content{
+        grid-column: col-st 5/full-end;
+        padding: 6rem 8vw;
+        display: grid;
+        align-content: center;
+        justify-items: start;
+    }
+
+    &__text{
+        margin-bottom: 4rem;
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+}
