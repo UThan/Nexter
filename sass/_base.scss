@@ -40,8 +40,6 @@ body{
     
 
     & > *{
-        font-size: 3rem;
-        padding: 0 4rem;
     }
 }
 
@@ -58,11 +56,6 @@ body{
 .realtors{
     background-color: $color-primary-dark;
     grid-column: col-st 7 / full-end;
-}
-
-.features{
-    background-color: $color-grey-light-1;
-    grid-column: center-st/center-end;
 }
 
 .story{
