@@ -1,0 +1,44 @@
+.sidebar{
+    background-color: $color-primary;
+    grid-row: 1 /-1;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.nav__btn{
+    border: none; 
+    cursor: pointer;
+    margin-top: 4rem; 
+    padding: 1.5rem 0;
+    background-color: transparent;
+
+    > span{
+        border-radius: 1px;
+        display: block;        
+        position: relative;
+        width: 4.5rem;
+        height: 3px;
+        background-color: $color-white;
+        &::before,&::after{            
+            display: block;
+            content: '';
+            position: absolute;
+            height: 3px;
+            width: 4.5rem;
+            top: 0;
+            left: 0;
+            background-color: $color-white;
+        }
+    
+        &::before{
+            transform: translateY(1.5rem);
+        }
+    
+        &::after{
+            transform: translateY(-1.5rem);
+        }
+    }
+
+    
+}

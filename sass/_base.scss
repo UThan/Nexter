@@ -43,11 +43,6 @@ body{
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 }
 
-.sidebar{
-    background-color: $color-primary;
-    grid-row: 1 /-1;
-}
-
 .header{
     background-color: $color-secondary;
     grid-column: full-st/ col-end 6;

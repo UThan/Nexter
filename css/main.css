@@ -30,11 +30,6 @@ body {
       grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 }
 
-.sidebar {
-  background-color: #c69963;
-  grid-row: 1 /-1;
-}
-
 .header {
   background-color: #101d2c;
   grid-column: full-st/ col-end 6;
@@ -114,6 +109,58 @@ body {
 
 .mb-5 {
   margin-bottom: 5rem;
+}
+
+.sidebar {
+  background-color: #c69963;
+  grid-row: 1 /-1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.nav__btn {
+  border: none;
+  cursor: pointer;
+  margin-top: 4rem;
+  padding: 1.5rem 0;
+  background-color: transparent;
+}
+
+.nav__btn > span {
+  border-radius: 1px;
+  display: block;
+  position: relative;
+  width: 4.5rem;
+  height: 3px;
+  background-color: #fff;
+}
+
+.nav__btn > span::before, .nav__btn > span::after {
+  display: block;
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 4.5rem;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+}
+
+.nav__btn > span::before {
+  -webkit-transform: translateY(1.5rem);
+          transform: translateY(1.5rem);
+}
+
+.nav__btn > span::after {
+  -webkit-transform: translateY(-1.5rem);
+          transform: translateY(-1.5rem);
 }
 
 .features {
