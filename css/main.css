@@ -45,11 +45,6 @@ body {
   grid-column: col-st 7 / full-end;
 }
 
-.homes {
-  background-color: #c69963;
-  grid-column: center-st/center-end;
-}
-
 .gallery {
   background-color: #aaa;
   grid-column: full-st/full-end;
@@ -108,6 +103,7 @@ body {
   color: #fff;
   -webkit-transition: all .2s;
   transition: all .2s;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -216,5 +212,100 @@ body {
   margin-bottom: 4rem;
   font-size: 1.5rem;
   font-style: italic;
+}
+
+.homes {
+  grid-column: center-st/center-end;
+  display: -ms-grid;
+  display: grid;
+  margin: 15rem 0;
+  -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 7rem;
+}
+
+.home {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 3.5rem;
+}
+
+.home__img {
+  width: 100%;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 1/ 2/ 3;
+}
+
+.home__like {
+  width: 2.5rem;
+  height: 2.5rem;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2/ 2/ 3;
+  fill: #c69963;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin: 1rem;
+}
+
+.home__name {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 1/ 2/ 3;
+  background-color: #101d2c;
+  padding: 1.25rem;
+  font-size: 1.5rem;
+  width: 80%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+  text-align: center;
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+.home__location, .home__room {
+  margin-top: 2rem;
+}
+
+.home__location, .home__room, .home__area, .home__price {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home__location svg, .home__room svg, .home__area svg, .home__price svg {
+  fill: #c69963;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.home__btn {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 4/1/5/3;
 }
 /*# sourceMappingURL=main.css.map */
