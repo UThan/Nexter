@@ -4,12 +4,20 @@
     background-position: center;
     grid-column: full-st/ col-end 6;
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
     grid-row-gap: 1.5rem;
     padding: 8rem;
     padding-top: 4rem;
-    grid-template-columns: max-content;
+    grid-template-columns: minmax(min-content,max-content);
     justify-content: center;
+
+    @media only screen and (max-width : $bp-medium){
+        grid-column: full-st/ full-end;
+    }
+
+    @media only screen and (max-width : $bp-small){
+        padding: 5rem;
+    }
 
     &__logo{
         height: 3rem;
@@ -47,7 +55,7 @@
     }
 
     &__btn{
-        justify-self: start;
-        align-self: start;
+        justify-self: flex-start;
+        align-self: flex-start;
     }
 }

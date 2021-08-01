@@ -11,6 +11,12 @@ html {
   font-size: 62.5%;
 }
 
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   font-family: "Nunito", sans-serif;
   color: #6D5D4B;
@@ -28,6 +34,25 @@ body {
   -ms-grid-rows: 80vh min-content 40vw (min-content)[3];
       grid-template-rows: 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
       grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+}
+
+@media only screen and (max-width: 62.5em) {
+  .container {
+    -ms-grid-columns: [full-st] minmax(6rem, 1fr) [center-st] ([col-st] minmax(min-content, 14rem) [col-end])[8] [center-end] minmax(6rem, 1fr) [full-end];
+        grid-template-columns: [full-st] minmax(6rem, 1fr) [center-st] repeat(8, [col-st] minmax(-webkit-min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+        grid-template-columns: [full-st] minmax(6rem, 1fr) [center-st] repeat(8, [col-st] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+    -ms-grid-rows: 6rem 80vh min-content 40vw (min-content)[3];
+        grid-template-rows: 6rem 80vh -webkit-min-content 40vw repeat(3, -webkit-min-content);
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+  }
+}
+
+@media only screen and (max-width: 50em) {
+  .container {
+    -ms-grid-rows: 6rem calc(100vh - 6rem) (min-content)[6];
+        grid-template-rows: 6rem calc(100vh - 6rem) repeat(6, -webkit-min-content);
+        grid-template-rows: 6rem calc(100vh - 6rem) repeat(6, min-content);
+  }
 }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
@@ -118,7 +143,22 @@ body {
           justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: start;
+          align-items: flex-start;
+}
+
+@media only screen and (max-width: 62.5em) {
+  .sidebar {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 /2;
+    grid-column: 1 /-1;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .nav__btn {
@@ -127,6 +167,14 @@ body {
   margin-top: 4rem;
   padding: 1.5rem 0;
   background-color: transparent;
+  display: block;
+}
+
+@media only screen and (max-width: 62.5em) {
+  .nav__btn {
+    margin-top: 0;
+    margin-right: 2rem;
+  }
 }
 
 .nav__btn > span {
@@ -167,18 +215,30 @@ body {
   grid-column: full-st/ col-end 6;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr min-content 6rem 1fr;
-      grid-template-rows: 1fr -webkit-min-content 6rem 1fr;
-      grid-template-rows: 1fr min-content 6rem 1fr;
+  -ms-grid-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+      grid-template-rows: 1fr -webkit-min-content minmax(6rem, -webkit-min-content) 1fr;
+      grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   grid-row-gap: 1.5rem;
   padding: 8rem;
   padding-top: 4rem;
-  -ms-grid-columns: max-content;
-      grid-template-columns: -webkit-max-content;
-      grid-template-columns: max-content;
+  -ms-grid-columns: minmax(min-content, max-content);
+      grid-template-columns: minmax(-webkit-min-content, -webkit-max-content);
+      grid-template-columns: minmax(min-content, max-content);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 50em) {
+  .header {
+    grid-column: full-st/ full-end;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .header {
+    padding: 5rem;
+  }
 }
 
 .header__logo {
@@ -228,11 +288,9 @@ body {
 }
 
 .header__btn {
-  -ms-grid-column-align: start;
-      justify-self: start;
+  justify-self: flex-start;
   -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
+      align-self: flex-start;
 }
 
 .realtors {
@@ -247,6 +305,13 @@ body {
           justify-content: center;
   justify-items: center;
   grid-row-gap: 2rem;
+  padding: 3rem;
+}
+
+@media only screen and (max-width: 50em) {
+  .realtors {
+    grid-column: full-st/ full-end;
+  }
 }
 
 .realtors__list {
@@ -260,6 +325,22 @@ body {
       -ms-flex-align: center;
           align-items: center;
   grid-row-gap: 5vh;
+}
+
+@media only screen and (max-width: 50em) {
+  .realtors__list {
+    -ms-grid-columns: (min-content max-content)[3];
+        grid-template-columns: repeat(3, -webkit-min-content -webkit-max-content);
+        grid-template-columns: repeat(3, min-content max-content);
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .realtors__list {
+    -ms-grid-columns: min-content max-content;
+        grid-template-columns: -webkit-min-content -webkit-max-content;
+        grid-template-columns: min-content max-content;
+  }
 }
 
 .realtors__img {
@@ -284,7 +365,13 @@ body {
   grid-gap: 6rem;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: start;
+          align-items: flex-start;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .features {
+    margin: 8rem 0;
+  }
 }
 
 .feature {
@@ -328,6 +415,13 @@ body {
   background-size: cover;
 }
 
+@media only screen and (max-width: 50em) {
+  .story__picture {
+    grid-column: full-st/ full-end;
+    padding: 3rem;
+  }
+}
+
 .story__img-1 {
   width: 100%;
   -ms-grid-row: 2;
@@ -335,6 +429,16 @@ body {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-area: 2 / 2 / 6 / 6;
+}
+
+@media only screen and (max-width: 50em) {
+  .story__img-1 {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 6;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-area: 1/1/7/5;
+  }
 }
 
 .story__img-2 {
@@ -346,6 +450,17 @@ body {
   grid-area: 4/4/7/7;
 }
 
+@media only screen and (max-width: 50em) {
+  .story__img-2 {
+    width: 100%;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
+    grid-area: 3/4/5/7;
+  }
+}
+
 .story__content {
   grid-column: col-st 5/full-end;
   padding: 6rem 8vw;
@@ -354,6 +469,16 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   justify-items: start;
+  background-color: #f9f7f6;
+}
+
+@media only screen and (max-width: 50em) {
+  .story__content {
+    grid-column: full-st/ full-end;
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    grid-row: 5 /6;
+  }
 }
 
 .story__text {
@@ -370,6 +495,12 @@ body {
   -ms-grid-columns: (minmax(25rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 7rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .homes {
+    margin: 8rem 0;
+  }
 }
 
 .home {
