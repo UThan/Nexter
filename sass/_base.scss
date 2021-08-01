@@ -43,11 +43,6 @@ body{
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
 }
 
-.header{
-    background-color: $color-secondary;
-    grid-column: full-st/ col-end 6;
-}
-
 .realtors{
     background-color: $color-primary-dark;
     grid-column: col-st 7 / full-end;
